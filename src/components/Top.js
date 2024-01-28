@@ -4,11 +4,9 @@ function Top() {
   const [cryptoArr, setCryptoArr] = useState([]);
 
   useEffect(() => {
-    // Fetch data from the API
     fetch('https://api.coinlore.net/api/tickers/')
       .then((response) => response.json())
       .then((data) => {
-        // Get the first 10 cryptocurrencies
         const top10Data = data.data.slice(0, 10);
         setCryptoArr(top10Data);
       })
